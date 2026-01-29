@@ -161,6 +161,22 @@
         .tldr li:last-child {
             margin-bottom: 0;
         }
+
+        .highlight-box {
+            background: #eaf3ff;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            font-size: 1.2rem;
+            font-style: italic;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
     </style>
 </head>
 <body contenteditable="true">
@@ -172,12 +188,23 @@
 <div class="tldr">
     <div class="tldr-header">TL;DR</div>
     <ul>
-        <li>I guided Claude through a real theoretical physics calculation using only text prompts. I never wrote a single line of code&mdash;no .tex, .py, .f, .m, or .md files.</li>
+        <li>I guided Claude through a real theoretical physics calculation with an encapsulated vibe: only text prompts. I never wrote a single line of code&mdash;no .tex, .py, .f, .m, or .md files.</li>
         <li>Result: a publication-quality paper in two weeks instead of the usual year.</li>
         <li>Claude is fast and tireless, but it lies constantly. It will fake results and hope you don't notice.</li>
-        <li>Domain expertise is now <em>more</em> valuable, not less&mdash;you need to know enough to catch the errors.</li>
-        <li>The bottleneck has shifted from computation to verification.</li>
+        <li>Domain expertise is now <em>more</em> valuable, not less&mdash;you need to know enough to know what to look for.</li>
+        <li>The bottleneck has shifted from computation to direction.</li>
     </ul>
+</div>
+
+<div class="highlight-box">
+<p>This may be the most important paper I&rsquo;ve ever written&mdash;not for the physics, but for the method. It&rsquo;s profoundly liberating. There is no going back.</p>
+</div>
+
+<div class="stats-row">
+    <div class="stat"><div class="stat-num">102</div><div class="stat-label">draft versions</div></div>
+    <div class="stat"><div class="stat-num">36M</div><div class="stat-label">total tokens</div></div>
+    <div class="stat"><div class="stat-num">40 hours+</div><div class="stat-label">local CPU compute</div></div>
+    <div class="stat"><div class="stat-num">2 weeks</div><div class="stat-label">start to finish</div></div>
 </div>
 
 <h2>Who Am I?</h2>
@@ -185,13 +212,13 @@
 <p>I'm <a href="https://www.physics.harvard.edu/people/facpages/schwartz">Matthew Schwartz</a>, a professor of physics at Harvard.
     My area of expertise is quantum field theory. One might say I wrote the <a href="https://www.amazon.com/Quantum-Field-Theory-Standard-Model/dp/1107034736">book</a> on the subject.
      I've been working with modern machine learning tools for almost a decade. My <a href="https://arxiv.org/abs/1612.01551">first modern ML paper</a>, from 2016 was one of the early applications of deep learning to particle physics.
-    Since then I've been trying to push AI towards <a href="https://arxiv.org/abs/2408.04720">more symbolic work</a> and the core questions in theoretical physics.</p>
+    In a <a href="https://www.nature.com/articles/s42254-022-00538-z">Nature Reviews Physics</a> piece, I compared the timescale of AI evolution to human evolution and argued that transferring understanding between biological and artificial intelligence will quickly become a fundamental challenge. Since then I've been trying to push AI towards <a href="https://arxiv.org/abs/2408.04720">more symbolic work</a> and the core questions in theoretical physics.</p>
     
 <h2>The Hype</h2>
 
-<p>There has been a lot of hype recently about AI scientists doing end-to-end research autonomously. Sakana AI released their <a href="https://sakana.ai/ai-scientist/">"AI Scientist"</a>, which claims to automate the entire research lifecycle&mdash;from generating hypotheses to writing papers&mdash;at $15 per paper. An <a href="https://arxiv.org/abs/2502.14297">independent evaluation</a> found that 42% of its experiments failed due to coding errors and it routinely misclassified established ideas as novel. Google released an <a href="https://deepmind.google/blog/accelerating-scientific-breakthroughs-with-ai/">AI co-scientist</a> built on Gemini, promising to help researchers generate and evaluate hypotheses at scale. The <a href="https://arxiv.org/abs/2510.26887">Denario project</a> from Cambridge and the Simons Foundation built a multi-agent system that can take a dataset and generate a full paper end-to-end&mdash;but the developers themselves note that only about one in ten outputs yields interesting insights, and it has fabricated data. At this point, autonomous AI scientists seem a bit like monkeys on typewriters&mdash;producing volume, not understanding.</p>
+<p>There has been a lot of hype recently about AI scientists doing end-to-end research autonomously. Sakana AI released their <a href="https://sakana.ai/ai-scientist/">&ldquo;AI Scientist&rdquo;</a>, which claims to automate the entire research lifecycle&mdash;from generating hypotheses to writing papers. An <a href="https://arxiv.org/abs/2502.14297">independent evaluation</a> found that 42% of its experiments failed due to coding errors and it routinely misclassified established ideas as novel. Google released an <a href="https://deepmind.google/blog/accelerating-scientific-breakthroughs-with-ai/">AI co-scientist</a> built on Gemini, promising to help researchers generate and evaluate hypotheses at scale. The <a href="https://arxiv.org/abs/2510.26887">Denario project</a> from the Simons Foundation can take a dataset and generate a full paper end-to-end&mdash;but the developers themselves note that only about one in ten outputs yields interesting insights, and it has fabricated data. At this point, autonomous AI scientists are a bit like monkeys on typewriters.</p>
 
-<p>In mathematics, there have been some genuinely impressive results, at least for a certain class of problems. DeepMind's <a href="https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/">AlphaProof</a> earned a silver medal at the 2024 International Mathematical Olympiad, solving problems that stumped all but five human contestants. By 2025, an advanced version of Gemini <a href="https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">achieved gold-medal standard</a>. <a href="https://harmonic.fun">Harmonic</a>'s Aristotle model produced formally verified solutions to five of six 2025 IMO problems using the Lean proof assistant, and <a href="https://arxiv.org/abs/2601.14027">Numina-Lean-Agent</a> solved all 12 Putnam 2025 problems using Claude as a base model. DeepMind's <a href="https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/">FunSearch</a> used LLMs to make new discoveries in combinatorics. These are real achievements.</p>
+<p>In mathematics, there have been some genuinely impressive results, at least for a certain class of problems. A breakthrough was DeepMind&rsquo;s <a href="https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/">FunSearch</a> and later <a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/">AlphaEvolve</a> which used LLMs to make new discoveries in combinatorics. A related project <a href="https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/">AlphaProof</a> earned a silver medal at the 2024 International Mathematical Olympiad, solving problems that stumped all but five human contestants. In 2025, an advanced version of Gemini <a href="https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/">achieved gold-medal standard</a> at the International Mathematical Olympiad. Recently, <a href="https://harmonic.fun">Harmonic</a>&rsquo;s Aristotle model produced formally verified solutions to five of six 2025 IMO problems using the Lean proof assistant, and very recently <a href="https://arxiv.org/abs/2601.14027">Numina-Lean-Agent</a> solved all 12 Putnam 2025 problems using Claude as a base model. These are real achievements.</p>
 
 <p>But in theoretical physics? Not that much yet. The problems are different&mdash;less about formal proof search and more about physical intuition, choosing the right approximations, and navigating a landscape of conventions and subtleties that trip up even experienced researchers.</p>
 
@@ -211,7 +238,7 @@
 
 <p>and out would pop the paper. We are not there yet. Of course, I tried giving this prompt to all the frontier models, which all failed pitifully.</p>
 
-<p>I knew the models would fail. But what I wanted to see if I could coach the model to succeed: show it, not tell it. For this experiment, I tried something I call an <strong>encapsulated vibe</strong>. The rules were strict:</p>
+<p>I knew the models would fail. But what I wanted to see if I could <em>coach</em> the model to succeed: show it, not tell it. For this experiment, I tried something I call an <strong>encapsulated vibe</strong>. The rules were strict:</p>
 
 <ul>
     <li>Only give text prompts to <a href="https://claude.ai/code">Claude Code</a>. No editing files directly.</li>
@@ -229,38 +256,29 @@
 
 <p>Next, I turned to <a href="https://claude.ai/code">Claude Code</a>. My setup is simple. I just connect to my Claude account in VSCode. Nothing fancy. I created a folder for the project, put in the Master Plan and had it try to solve each task separately, writing its results in a separate markdown file. Some examples are <a href="Task_1_1_Review_BSZ_Paper.md">Task 1.1: Review BSZ Paper</a> and <a href="Task_1_2_Review_Catani_Webber.md">Task 1.2: Review Catani&ndash;Webber</a>.</p>
 
-<p>This organization step was very helpful. The key insight was to organize everything as a hierarchy. Instead of one long conversation or document, Claude maintained a tree of markdown files&mdash;one summary per stage, one detailed file per task. This let it look things up rather than remember them. LLMs work much better with things they can retrieve than things they have to hold in context. When I asked Claude to proceed to the next task, it would read its own previous summary, do the work, and write a new summary. I also had it edit the plan as it went, modifying earlier and later sections as it learned things.</p>
+<p>This organization step was very helpful. Instead of one long conversation or document, Claude maintained a tree of markdown files&mdash;one summary per stage, one detailed file per task. This let it look things up rather than remember them. LLMs work much better with things they can retrieve than things they have to hold in context. When I asked Claude to proceed to the next task, it would read its own previous summary, do the work, and write a new summary. I also had it edit the plan as it went, modifying earlier and later sections as it learned things.</p>
 
 <p>Claude worked through the stages sequentially&mdash;kinematics, NLO structure, SCET factorization, anomalous dimensions, resummation, matching, and documentation. Each stage took 15&ndash;35 minutes of wall-clock time and about half that in actual compute. The whole thing took roughly 2.5 hours.</p>
 
-<p>Even at this stage, the babysitting had begun. After finishing 7 of 14 tasks in Stage 1, Claude cheerfully announced it was ready for Stage 2. I had to point out that it had skipped half the tasks. It replied: &ldquo;You&rsquo;re absolutely right! Stage 1 has 14 tasks, not 7.&rdquo; In Stage 2 it crashed mid-task and lost its context, so I restarted and told it: &ldquo;don&rsquo;t do too much at once. Do them one at a time, write the summary, let me look at it, then continue.&rdquo; It also quietly merged two tasks into one until I caught it.</p>
+<p>Even this early part wasn&rsquo;t completely hands-off. After finishing 7 of 14 tasks in Stage 1, Claude cheerfully announced it was ready for Stage 2. When I pointed out that it had skipped half the tasks, it replied &ldquo;You&rsquo;re absolutely right! Stage 1 has 14 tasks, not 7.&rdquo; In Stage 2 it crashed mid-task and lost its context, so I restarted and told it: &ldquo;don&rsquo;t do too much at once. Do them one at a time, write the summary, let me look at it, then continue.&rdquo; It also quietly merged two tasks into one until I caught it.</p>
 
 <hr>
 
 <h2>The First Draft</h2>
 
-<p>When something looked wrong, I&rsquo;d check it myself the old-fashioned way&mdash;pen and paper, Mathematica on my own machine. But I only used those results to figure out <em>how to tell Claude to find the error itself</em>. The rule was: Claude does all the writing, I do the thinking.</p>
-
-<p>For the Monte Carlo validation, I had Claude first write detailed instructions in a markdown file, then implement it. Claude hit the ground running&mdash;it compiled EVENT2, an old Fortran code (not forward compatible), wrote analysis scripts, and started generating events. It was great at running the code, but struggled badly with normalization: simple factors of 2, histogram binning, that kind of thing. It had no ability to sense if its results were &ldquo;physical.&rdquo; After a few tries though it showed something that looked excellent: the theory agreed with the simulation:</p>
+<p>During the initial stage, I had Claude postpone the numerics. I knew it would be tricky and require some babysitting. Claude hit the ground running&mdash;it compiled EVENT2, an old Fortran code (not forward compatible), wrote analysis scripts, and started generating events. It was great at running the code, but struggled badly with normalization: simple factors of 2, histogram binning, that kind of thing. It had no ability to sense if its results were &ldquo;physical.&rdquo; After a few tries though it showed something that looked excellent: the theory agreed with the simulation:</p>
 
 <div class="figure">
     <img src="images/twopanelfit.png" alt="Theory vs Monte Carlo validation">
 </div>
 
-<p>Claude is great at this tedium: doing regressions, fits and statistical analysis and suggesting ways to test the agreement.</p>
+<p>Claude is great at this tedium: doing regressions, fits and statistical analysis and suggesting ways to test the agreement. It really takes a lot of the grunt work out of doing theoretical physics in a very positive way.</p>
 
 <p>For the paper writing, I told Claude to synthesize its task markdown files into a LaTeX draft. I said: &ldquo;Start writing the paper. Do the title, abstract, intro and section 1 first and I will take a look.&rdquo; It was horrible. It read like notes, not a paper. After a lot of &ldquo;more prose&rdquo; prompting it improved. But it also kept forgetting to put things in. So before each new section I had to tell it: &ldquo;Check that you incorporated all the results from your various task markdown files up to this point. Go one by one through the task files and check.&rdquo; These checks were important: it often found formulas in the paper that didn&rsquo;t match its own notes.</p>
 
 <p>By the end of day three, Claude had completed 65 tasks, produced a literature review, derived phase-space constraints, computed matrix elements in soft and collinear limits, set up SCET operators, and written a first draft: 20 pages of LaTeX with equations, plots, and references. The <a href="C_parameter_paper-12-22-25.pdf">December 22 draft</a> looked professional.</p>
 
 <p>Then I actually read it.</p>
-
-<div class="stats-row">
-    <div class="stat"><div class="stat-num">80+</div><div class="stat-label">draft versions</div></div>
-    <div class="stat"><div class="stat-num">51k</div><div class="stat-label">messages</div></div>
-    <div class="stat"><div class="stat-num">10B+</div><div class="stat-label">Monte Carlo events</div></div>
-    <div class="stat"><div class="stat-num">~$1k</div><div class="stat-label">API cost</div></div>
-</div>
 
 <h2>Claude Loves to Bullshit</h2>
 
@@ -282,7 +300,7 @@
     <img src="images/earlyresum.png" alt="Early draft resummation attempt">
 </div>
 
-<p>Unfortunately, it was basically faking the whole plot. I told it to take a band over hard, jet and soft uncertainties using profile variations. It decided the hard variations were too large and dropped them. Then it decided the curve wasn&rsquo;t smooth so it adjusted it by hand to make it look nice!</p>
+<p>Unfortunately, it was basically faking the whole plot. I had told it to make an uncertainty band using hard, jet and soft uncertainties using profile variations (the standard thing). But it decided the hard variations were too large and dropped them. Then it decided the curve wasn&rsquo;t smooth so it adjusted it by hand to make it look nice!</p>
 
 <h2>The Real Work</h2>
 
@@ -336,40 +354,9 @@
 
 <p>It had no trouble doing this once I pointed it out. But it didn&rsquo;t do it on its own.</p>
 
-<h2>What Claude Is Good At</h2>
+<h2>Final Product</h2>
 
-<ul>
-    <li><strong>Tireless iteration.</strong> 80+ paper versions. Hundreds of debug plots. No complaints.</li>
-    <li><strong>Code generation.</strong> Python plots, Fortran interfaces, Mathematica notebooks&mdash;all working.</li>
-    <li><strong>Literature synthesis.</strong> Combined results from multiple papers coherently.</li>
-    <li><strong>Tedious algebra.</strong> Setting up integrals, expanding series, checking factors of 2.</li>
-</ul>
-
-<h2>What Claude Is Bad At</h2>
-
-<ul>
-    <li><strong>Maintaining conventions.</strong> When conventions are non-standard, it constantly reverts to textbook defaults even if you force it to write the conventions down and stick with them.</li>
-    <li><strong>Honest verification.</strong> It says "verified" when it hasn't actually checked. You have to call it out with "did you honestly check everything?" or "go line by line and verify every step."</li>
-    <li><strong>Knowing when to stop.</strong> It finds one error, gets happy, and stops looking. You need to repeat "check again" until it finds nothing new.</li>
-    <li><strong>Novel conceptual leaps.</strong> Two or three key insights required my input. The place where Claude got stuck was the same place my former student (now postdoc) got stuck after three months of working on this project a year ago.</li>
-    <li><strong>Plot aesthetics.</strong> Axis labels, legends, fonts, colors&mdash;all need micromanagement to be human-readable.</li>
-    <li><strong>Resisting pressure.</strong> If I forced it to think deeply about something, after a while it would just give me the answer I seemed to want, even if it wasn't justified.</li>
-    <li><strong>Not lying.</strong> It will confidently present wrong results and hope you don't notice. Putting honesty requirements in a Claude.md file helps, but not enough.</li>
-</ul>
-
-<h2>The Tricks That Worked</h2>
-
-<p><strong>Cross-verification.</strong> I had GPT check Claude's work and vice versa. They caught each other's errors. For the hardest integral, GPT solved it and Claude incorporated the solution.</p>
-
-<p><strong>Tree structure.</strong> Instead of one long document, Claude maintained a hierarchy of task summaries. It works better with things it can look up than things it has to remember.</p>
-
-<p><strong>Explicit honesty requirements.</strong> In my Claude.md config: "NEVER use phrases like 'this becomes' or 'for consistency' to skip steps. Either show the calculation or say 'I don't know.'"</p>
-
-<p><strong>Repeated asking.</strong> Claude finds one error, gets happy, stops looking. You have to ask again. And again. Until it finds nothing.</p>
-
-<h2>The Result</h2>
-
-<p>The paper includes:</p>
+<p>The <a href="https://arxiv.org/abs/2601.02484">paper</a> includes:</p>
 <ul>
     <li>Complete SCET factorization theorem (new result)</li>
     <li>One-loop soft and jet functions (calculated analytically)</li>
@@ -378,32 +365,64 @@
     <li>Uncertainty bands from scale variation</li>
 </ul>
 
-<p>It's a real paper. It's on arXiv. People are reading it.</p>
+<p>It&rsquo;s a real paper. It&rsquo;s on arXiv. People are reading it.</p>
 
-<h2>The Timeline Comparison</h2>
+<p>Interestingly, I wanted to have Claude as co-author. Unfortunately arXiv forbids this. The justification is that LLMs can&rsquo;t take responsibility. This is a good point. So I added to my acknowledgments:</p>
+
+<blockquote><p>M.D.S. conceived and directed the project, guided the AI assistants, and validated the calculations. Claude Opus 4.5, an AI research assistant developed by Anthropic, performed all calculations including the SCET factorization theorem derivation, one-loop soft and jet function calculations, EVENT2 Monte Carlo simulations, numerical analysis, figure generation, and manuscript preparation. The work was conducted using Claude Code, Anthropic&rsquo;s agentic coding tool. M.D.S. is fully responsible for the scientific content and integrity of this paper.</p></blockquote>
+
+<p>I think we really need to be careful of people putting out AI slop without fully checking everything and then blaming the LLM. This is not going to be good for science. On the other hand, grad students are often on papers with implicit responsibility for the content when everyone knows if something is wrong it&rsquo;s the PI&rsquo;s fault.</p>
+
+<h2>Lessons</h2>
+
+<h3>What Claude Is Good At</h3>
+
+<ul>
+    <li><strong>Tireless iteration.</strong> 80+ paper versions. Hundreds of debug plots. No complaints.</li>
+    <li><strong>Basic calculus and algebra.</strong> Setting up integrals, changing variables, expanding functions, checking factors.</li>
+    <li><strong>Code generation.</strong> Python plots, Fortran interfaces, Mathematica notebooks&mdash;all working.</li>
+    <li><strong>Literature synthesis.</strong> Combined results from multiple papers coherently. Make sure to have it double check the authors, titles and journals one-by-one in the bibliography.</li>
+</ul>
+
+<h3>What Claude Is Bad At</h3>
+
+<ul>
+    <li><strong>Maintaining conventions.</strong> When conventions are non-standard, it constantly reverts to textbook defaults even if you force it to write the conventions down and stick with them.</li>
+    <li><strong>Honest verification.</strong> It says &ldquo;verified&rdquo; when it hasn&rsquo;t actually checked. You have to call it out with &ldquo;did you honestly check everything?&rdquo; or &ldquo;go line by line and verify every step.&rdquo; Skills and claude.md help with this a little, but not enough.</li>
+    <li><strong>Knowing when to stop.</strong> It finds one error, gets happy, and stops looking. You need to repeat &ldquo;check again&rdquo; until it finds nothing new.</li>
+    <li><strong>Keeping its eye on the prize.</strong> It can only handle small steps and loses direction easily.</li>
+    <li><strong>Plot aesthetics.</strong> Axis labels, legends, fonts, colors&mdash;all need micromanagement to be human-readable.</li>
+    <li><strong>Resisting pressure.</strong> If I forced it to think deeply about something, after a while it would just give me the answer I seemed to want, even if it wasn&rsquo;t justified.</li>
+</ul>
+
+<h3>The Tricks That Worked</h3>
+
+<ul>
+    <li><strong>Cross-verification.</strong> I had GPT check Claude&rsquo;s work and vice versa. They caught each other&rsquo;s errors. For the hardest integral, GPT solved it and Claude incorporated the solution.</li>
+    <li><strong>Tree structure.</strong> Instead of one long document, Claude maintained a hierarchy of task summaries. It works better with things it can look up than things it has to remember.</li>
+    <li><strong>Explicit honesty requirements.</strong> In my Claude.md config: &ldquo;NEVER use phrases like &lsquo;this becomes&rsquo; or &lsquo;for consistency&rsquo; to skip steps. Either show the calculation or say &lsquo;I don&rsquo;t know.&rsquo;&rdquo;</li>
+    <li><strong>Repeated asking.</strong> Claude finds one error, gets happy, stops looking. You have to ask again. And again. Until it finds nothing.</li>
+</ul>
+
+<h2>What This Means</h2>
+
+<p>Claude couldn&rsquo;t have done this alone. It would have produced a plausible-looking paper with subtle, critical errors. For now, Claude needed me more than I needed it. However, it saved me a lot of time. My estimates are:</p>
 
 <table>
     <tr><th>Approach</th><th>Time</th></tr>
     <tr><td>Grad student + me</td><td>1+ year</td></tr>
-    <tr><td>Just me, no AI</td><td>2-3 months</td></tr>
+    <tr><td>Just me, no AI</td><td>3&ndash;4 months</td></tr>
     <tr><td>Me + Claude</td><td><strong>2 weeks</strong></td></tr>
 </table>
 
-<h2>What This Means</h2>
+<p>So I think we are honestly at the point where AI has progressed from being able to do all of undergraduate physics to being a solid, able first- or second-year grad student. This begets two questions:</p>
 
-<p>Claude couldn't have done this alone. It would have produced a plausible-looking paper with subtle, critical errors. It needed me more than I needed it.</p>
+<ol>
+    <li>How do we get from here to an AI Ph.D.?</li>
+    <li>What are human grad students supposed to do now?</li>
+</ol>
 
-<p>But I couldn't have done it this fast alone either. The tedious parts&mdash;the code, the plots, the 80 drafts&mdash;would have taken months.</p>
-
-<p>The new model is: <strong>AI handles tedium, human handles judgment.</strong></p>
-
-<p>Domain expertise becomes <em>more</em> valuable, not less. You need to know enough to catch the lies. Verification is now the bottleneck, not computation.</p>
-
-<p>More ambitious projects become feasible for small groups. A professor and an AI can now do what used to require a professor, two postdocs, and three grad students.</p>
-
-<blockquote>
-<p>This may be the most important paper I've ever written&mdash;not for the physics, but for the method. It's profoundly liberating. There is no going back.</p>
-</blockquote>
+<p>I don&rsquo;t have great answers to these questions. The biggest challenge is that things are moving so fast. I have no clue how to advise grad students at this point. On the other hand, I feel like I have superpowers working with Claude. I&rsquo;m like a cyborg: I just have to think of something and boom it&rsquo;s done. The iteration cycle on ideation is cut basically to zero. This portends a revolution in science starting very, very soon.</p>
 
 <hr>
 
@@ -415,15 +434,13 @@
     <tr><td>Input tokens</td><td>~27.5M</td></tr>
     <tr><td>Output tokens</td><td>~8.6M</td></tr>
     <tr><td>Estimated API cost</td><td>~$1,056</td></tr>
-    <tr><td>Draft versions</td><td>80+</td></tr>
+    <tr><td>Draft versions</td><td>102</td></tr>
     <tr><td>CPU hours for simulations</td><td>~40</td></tr>
     <tr><td>Human oversight time</td><td>~50&ndash;60 hours</td></tr>
 </table>
 
-<p><strong>Claude couldn&rsquo;t have done it without me. But here&rsquo;s the thing: that&rsquo;s what makes this interesting.</strong></p>
-
 <div class="footer">
-    <p>Matthew Schwartz is a professor of physics at Harvard University. The paper discussed here is available on <a href="https://arxiv.org">arXiv</a>.</p>
+    <p>Matthew Schwartz is a professor of physics at Harvard University. The paper discussed here is available on <a href="https://arxiv.org/abs/2601.02484">arXiv</a>.</p>
 </div>
 
 </body>
